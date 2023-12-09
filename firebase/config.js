@@ -1,5 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { redirect } from "next/dist/server/api-utils";
 
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -22,6 +23,7 @@ export const createUser = async (email, password) => {
       password
     );
     const user = userCredential.user;
+    redirect("/dashboard");
     return user;
   } catch (error) {
     const errorCode = error.code;
