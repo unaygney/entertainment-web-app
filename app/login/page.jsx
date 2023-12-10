@@ -1,6 +1,5 @@
 import React from "react";
-import Input from "@/components/Input";
-import Button from "@/components/Button";
+import LoginForm from "@/components/LoginForm";
 import Link from "next/link";
 import LogoImg from "@/assets/icons/logo.svg";
 export const metadata = {
@@ -16,11 +15,7 @@ function Login() {
         <h1 className="text-white text-4xl font-light tracking-[0.5px] leading-normal ">
           Login
         </h1>
-        <form className="w-full flex flex-col gap-4 ">
-          <Input text="email" placeholder="Email address" />
-          <Input text="password" placeholder="Password" />
-          <Button type={"submit"} title={"Login to your account"} />
-        </form>
+        <LoginForm />
         <Link
           className="text-[15px] font-light leading-normal text-white text-center "
           href={"/signup"}

@@ -1,8 +1,12 @@
 import React from "react";
 import LogoImg from "@/assets/icons/logo.svg";
-import Input from "@/components/Input";
-import Button from "@/components/Button";
+import SignupForm from "@/components/SignupForm";
 import Link from "next/link";
+
+export const metadata = {
+  title: "Sign Up",
+  description: "Entertainment Web App Sign Up Page",
+};
 function Signup() {
   return (
     <main className="w-screen h-screen bg-[#10141E] px-6 py-12 flex flex-col gap-10 items-center justify-center">
@@ -11,12 +15,7 @@ function Signup() {
         <h1 className="text-white text-4xl font-light tracking-[0.5px] leading-normal ">
           Sign Up
         </h1>
-        <form className="w-full flex flex-col gap-4 ">
-          <Input text="email" placeholder="Email address" />
-          <Input text="password" placeholder="Password" />
-          <Input text="password" placeholder="Repeat password" />
-          <Button type={"submit"} title={"Create an account"} />
-        </form>
+        <SignupForm />
         <Link
           className="text-[15px] font-light leading-normal text-white text-center "
           href={"/login"}
