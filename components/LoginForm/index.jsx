@@ -22,8 +22,7 @@ function LoginForm() {
     e.preventDefault();
     try {
       await login(email, password);
-      console.log("giriş başarili");
-      router("/dashboard");
+      router.push("/dashboard");
     } catch (err) {
       setError(err.message);
     }
