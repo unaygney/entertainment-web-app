@@ -63,7 +63,7 @@ function SignupForm() {
       />
       <Input
         type="password"
-        placeholder="Password"
+        placeholder="Repeat password"
         value={rePassword}
         onChange={handleRePassword}
       />
