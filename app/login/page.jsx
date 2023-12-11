@@ -2,6 +2,7 @@ import React from "react";
 import LoginForm from "@/components/LoginForm";
 import Link from "next/link";
 import LogoImg from "@/assets/icons/logo.svg";
+
 export const metadata = {
   title: "Login Page",
   description: "Entertainment Web App Login Page ",

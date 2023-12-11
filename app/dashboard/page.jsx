@@ -1,6 +1,6 @@
 import React from "react";
 
-function Dashboard() {
+async function Dashboard() {
   return <div>dashboard page</div>;
 }
 
