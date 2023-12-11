@@ -3,7 +3,8 @@ import React, { useState } from "react";
 import Input from "../Input";
 import Button from "../Button";
 import { useRouter } from "next/navigation";
-import { login } from "@/lib/firebase";
+import { login, auth } from "@/lib/firebase";
+
 function LoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -22,6 +23,8 @@ function LoginForm() {
     e.preventDefault();
     try {
       await login(email, password);
+      const user = auth.currentUser;
+      sessionStorage.setItem("user", JSON.stringify(user));
       router.push("/dashboard");
     } catch (err) {
       setError(err.message);
