@@ -3,7 +3,9 @@ import React, { useState } from "react";
 import Input from "../Input";
 import Button from "../Button";
 import { useRouter } from "next/navigation";
-import { login, auth } from "@/lib/firebase";
+import { login } from "@/lib/firebase";
+import { getAuth } from "firebase/auth";
+import { useAuth } from "@/lib/Auth";
 
 function LoginForm() {
   const [email, setEmail] = useState("");
@@ -23,6 +25,7 @@ function LoginForm() {
     e.preventDefault();
     try {
       await login(email, password);
+      const auth = getAuth();
       const user = auth.currentUser;
       sessionStorage.setItem("user", JSON.stringify(user));
       router.push("/dashboard");
@@ -30,6 +33,9 @@ function LoginForm() {
       setError(err.message);
     }
   };
+
+  const user = useAuth();
+  console.log(user);
 
   return (
     <form className="w-full flex flex-col gap-4 " onSubmit={handleSubmit}>
