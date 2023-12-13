@@ -10,9 +10,12 @@ async function Dashboard() {
   console.log(trends);
 
   return (
-    <div className="w-full min-h-screen bg-[#10141E] ">
+    <div className="w-full min-h-screen bg-[#10141E] flex ">
       <Navbar />
-      <TrendMovies trends={trends} />
+
+      <main>
+        <TrendMovies trends={trends} />
+      </main>
     </div>
   );
 }

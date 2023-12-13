@@ -31,7 +31,7 @@ const NAV_LINKS = [
 
 function Navbar() {
   return (
-    <header className="fixed top-0 left-0 right-0 md:top-6 md:left-6 md:right-6  lg:top-8 lg:left-8 lg:bottom-8  h-14 lg:h-auto  lg:w-24  bg-[#161D2F] lg:py-8  flex justify-between lg:justify-start items-center px-4 md:px-6 lg:flex-col md:rounded-[10px] lg:rounded-[20px]  ">
+    <header className=" h-14 lg:h-screen md:mx-6 lg:w-24  bg-[#161D2F] lg:py-8  flex justify-between lg:justify-start items-center px-4 md:px-6 lg:flex-col md:rounded-[10px] lg:rounded-[20px]  ">
       <Logo />
 
       <nav className="flex gap-6 md:gap-9 lg:flex-col lg:mt-[72px] ">
