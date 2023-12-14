@@ -1,9 +1,7 @@
 import React from "react";
 import Logo from "@/assets/icons/logo.svg";
 import Image from "next/image";
-
 // Images
-
 import IconHome from "@/assets/icons/icon-nav-home.svg?url";
 import IconMovies from "@/assets/icons/icon-nav-movies.svg?url";
 import IconSeries from "@/assets/icons/icon-nav-tv-series.svg?url";
@@ -31,7 +29,7 @@ const NAV_LINKS = [
 
 function Navbar() {
   return (
-    <header className=" h-14 lg:h-screen md:mx-6 lg:w-24  bg-[#161D2F] lg:py-8  flex justify-between lg:justify-start items-center px-4 md:px-6 lg:flex-col md:rounded-[10px] lg:rounded-[20px]  ">
+    <header className=" h-14 lg:h-screen  lg:w-24  bg-[#161D2F] lg:py-8  flex justify-between lg:justify-start items-center px-4 md:px-6 lg:flex-col md:rounded-[10px] lg:rounded-[20px]  ">
       <Logo />
 
       <nav className="flex gap-6 md:gap-9 lg:flex-col lg:mt-[72px] ">
