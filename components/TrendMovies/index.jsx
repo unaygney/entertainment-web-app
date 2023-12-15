@@ -19,7 +19,9 @@ function TrendMovies({ trends }) {
           >
             <Image
               src={trend.thumbnail.trending.small}
-              alt={"movie image"}
+              alt={`${trend.title}'s thumbnail`}
+              placeholder="blur"
+              blurDataURL={trend.thumbnail.trending.small}
               fill
               className="rounded-lg"
             />
