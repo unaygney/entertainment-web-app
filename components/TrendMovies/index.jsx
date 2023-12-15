@@ -11,21 +11,18 @@ function TrendMovies({ trends }) {
         Trending
       </h3>
 
-      <div className="w-[200px] h-[200px] relative">
-        {/* <Image src={} /> */}
-      </div>
       <div className="flex gap-4 overflow-x-scroll scroll-smooth scrollbar-hide   ">
         {trends.map((trend, i) => (
           <div
             key={i}
             className="relative shrink-0 w-[240px] h-[140px] md:w-[470px] md:h-[230px]     "
           >
-            {/* <Image
+            <Image
               src={trend.thumbnail.trending.small}
               alt={"movie image"}
               fill
               className="rounded-lg"
-            /> */}
+            />
             <div className="absolute bg-transparent left-4 bottom-4">
               <div className="flex gap-6">
                 <h6 className="text-white opacity-75 leading-normal text-xs ">

@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["https://i.imgur.com/"],
+    domains: ["i.imgur.com"],
     formats: ["image/webp"],
   },
 

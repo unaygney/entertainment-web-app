@@ -7,7 +7,7 @@ import SearchIcon from "@/assets/icons/icon-search.svg";
 
 async function Dashboard() {
   const movies = await getMovies();
-  const trends = movies.filter((movie) => movie.isTrending === true);
+  const trends = await movies.filter((movie) => movie.isTrending === true);
 
   return (
     <div className="w-full min-h-screen  bg-[#10141E]    ">
