@@ -10,6 +10,9 @@ export function middleware(request) {
   }
 
   if (request.nextUrl.pathname.endsWith("/")) {
+    if (hasUser) {
+      return NextResponse.redirect(new URL("/dashboard", request.url));
+    }
     return NextResponse.rewrite(new URL("/login", request.url));
   }
 }

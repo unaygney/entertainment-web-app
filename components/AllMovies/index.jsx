@@ -20,7 +20,7 @@ function AllMovies({ movies }) {
             <div className="absolute right-4 top-4 w-8 h-8 rounded-full bg-[#10141e80] inline-flex items-center justify-center z-10">
               {movie.isBookmarked ? <FulllBookmark /> : <EmptyBookmark />}
             </div>
-            <div className="relative  h-[110px] md:h-[140px] lg:h-[174px]">
+            <div className="relative w-full  h-[110px] md:h-[140px] lg:h-[174px]">
               <Image
                 src={movie.thumbnail.regular.small}
                 alt="movie image"
