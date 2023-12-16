@@ -55,6 +55,7 @@ function DashboardContainer({ trends, movies }) {
                 onChange={(e) => setSearch(e.target.value)}
               />
             </div>
+
             <TrendMovies trends={trends} />
             <AllMovies movies={movies} />
           </main>

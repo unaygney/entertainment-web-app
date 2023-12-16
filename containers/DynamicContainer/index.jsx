@@ -43,8 +43,8 @@ function DynamicContainer({ movies }) {
             </div>
           </main>
         ) : (
-          <main className="overflow-hidden ">
-            <div className="flex items-center px-4 mt-6">
+          <main className="overflow-hidden px-4 ">
+            <div className="flex items-center  mt-6">
               <SearchIcon />
               <Input
                 placeholder={"Please enter the name movies or series"}
@@ -54,7 +54,10 @@ function DynamicContainer({ movies }) {
                 onChange={(e) => setSearch(e.target.value)}
               />
             </div>
-            <div className="flex flex-wrap gap-4 ml-4">
+            <h3 className="text-xl font-light text-white tracking-[-0.312px] leading-normal md:text-[32px] md:tracking-[-0.5px]">
+              deneme
+            </h3>
+            <div className="flex flex-wrap gap-4 ">
               {filteredMovies.map((movie, i) => (
                 <Card movie={movie} key={i} />
               ))}
