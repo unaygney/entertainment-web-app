@@ -1,13 +1,11 @@
 "use client";
+import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Input from "@/components/Input";
-import React, { useState } from "react";
-import TrendMovies from "@/components/TrendMovies";
 import SearchIcon from "@/assets/icons/icon-search.svg";
-import AllMovies from "@/components/AllMovies";
 import Card from "@/components/Card";
 
-function DashboardContainer({ trends, movies }) {
+function DynamicContainer({ movies }) {
   const [search, setSearch] = useState("");
 
   const filteredMovies = movies.filter(
@@ -16,6 +14,7 @@ function DashboardContainer({ trends, movies }) {
       movie.title &&
       movie.title.toLowerCase().includes(search.toLowerCase())
   );
+
   return (
     <div className="w-full min-h-screen  bg-[#10141E]    ">
       <div className="flex flex-col lg:flex-row md:p-6 lg:p-8 ">
@@ -44,7 +43,7 @@ function DashboardContainer({ trends, movies }) {
             </div>
           </main>
         ) : (
-          <main className="overflow-hidden">
+          <main className="overflow-hidden ">
             <div className="flex items-center px-4 mt-6">
               <SearchIcon />
               <Input
@@ -55,8 +54,11 @@ function DashboardContainer({ trends, movies }) {
                 onChange={(e) => setSearch(e.target.value)}
               />
             </div>
-            <TrendMovies trends={trends} />
-            <AllMovies movies={movies} />
+            <div className="flex flex-wrap gap-4 ml-4">
+              {filteredMovies.map((movie, i) => (
+                <Card movie={movie} key={i} />
+              ))}
+            </div>
           </main>
         )}
       </div>
@@ -64,4 +66,4 @@ function DashboardContainer({ trends, movies }) {
   );
 }
 
-export default DashboardContainer;
+export default DynamicContainer;
