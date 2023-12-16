@@ -1,50 +1,16 @@
 import React from "react";
-import Image from "next/image";
-import TvIcon from "@/assets/icons/icon-category-tv.svg";
-import MovieIcon from "@/assets/icons/icon-category-movie.svg";
 
+import TrendCard from "@/components/TrendCard";
 function TrendMovies({ trends }) {
-  console.log(trends[0]);
   return (
     <div className="mt-6 pl-4     ">
-      <h3 className="text-xl font-light text-white tracking-[-0.312px] leading-normal mb-4 ">
+      <h3 className="text-xl font-light text-white tracking-[-0.312px] leading-normal mb-4  md:text-[32px] md:tracking-[-0.5px] ">
         Trending
       </h3>
 
       <div className="flex gap-4 overflow-x-scroll scroll-smooth scrollbar-hide   ">
         {trends.map((trend, i) => (
-          <div
-            key={i}
-            className="relative shrink-0 w-[240px] h-[140px] md:w-[470px] md:h-[230px]     "
-          >
-            <Image
-              src={trend.thumbnail.trending.small}
-              alt={`${trend.title}'s thumbnail`}
-              placeholder="blur"
-              blurDataURL={trend.thumbnail.trending.small}
-              fill
-              className="rounded-lg"
-            />
-            <div className="absolute bg-transparent left-4 bottom-4">
-              <div className="flex gap-6">
-                <h6 className="text-white opacity-75 leading-normal text-xs ">
-                  {trend.year}
-                </h6>
-                <ul className="flex list-disc gap-6 ">
-                  <li className="text-white opacity-75 leading-normal text-xs inline-flex items-center gap-1">
-                    {trend.category === "Movie" ? <MovieIcon /> : <TvIcon />}
-                    {trend.category}
-                  </li>
-                  <li className="text-white opacity-75 leading-normal text-xs">
-                    {trend.rating}
-                  </li>
-                </ul>
-              </div>
-              <h3 className="text-[15px] md:text-2xl font-medium  text-white">
-                {trend.title}
-              </h3>
-            </div>
-          </div>
+          <TrendCard key={i} trend={trend} />
         ))}
       </div>
     </div>

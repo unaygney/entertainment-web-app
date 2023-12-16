@@ -4,6 +4,7 @@ import { getMovies } from "@/services/movies";
 import React from "react";
 import TrendMovies from "@/components/TrendMovies";
 import SearchIcon from "@/assets/icons/icon-search.svg";
+import AllMovies from "@/components/AllMovies";
 
 async function Dashboard() {
   const movies = await getMovies();
@@ -23,6 +24,7 @@ async function Dashboard() {
             />
           </div>
           <TrendMovies trends={trends} />
+          <AllMovies movies={movies} />
         </main>
       </div>
     </div>
