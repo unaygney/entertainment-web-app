@@ -2,9 +2,10 @@ import React from "react";
 import Image from "next/image";
 import TvIcon from "@/assets/icons/icon-category-tv.svg";
 import MovieIcon from "@/assets/icons/icon-category-movie.svg";
+import EmptyBookmark from "@/assets/icons/icon-bookmark-empty.svg";
+import FulllBookmark from "@/assets/icons/icon-bookmark-full.svg";
 
 function AllMovies({ movies }) {
-  console.log(movies);
   return (
     <section className="flex flex-col  mt-6 px-6 pb-10">
       <h3 className="text-xl font-light text-white tracking-[-0.312px] leading-normal md:text-[32px] md:tracking-[-0.5px]  ">
@@ -14,8 +15,11 @@ function AllMovies({ movies }) {
         {movies.map((movie, i) => (
           <div
             key={i}
-            className="w-[45%] md:w-[32%] lg:w-[23%] flex flex-col gap-2 mt-4 md:mt-6 lg:mt-8  "
+            className="w-[45%] md:w-[32%] lg:w-[23%] flex flex-col gap-2 mt-4 md:mt-6 lg:mt-8 relative  "
           >
+            <div className="absolute right-4 top-4 w-8 h-8 rounded-full bg-[#10141e80] inline-flex items-center justify-center z-10">
+              {movie.isBookmarked ? <FulllBookmark /> : <EmptyBookmark />}
+            </div>
             <div className="relative  h-[110px] md:h-[140px] lg:h-[174px]">
               <Image
                 src={movie.thumbnail.regular.small}

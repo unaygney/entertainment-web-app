@@ -2,6 +2,8 @@ import React from "react";
 import Image from "next/image";
 import TvIcon from "@/assets/icons/icon-category-tv.svg";
 import MovieIcon from "@/assets/icons/icon-category-movie.svg";
+import EmptyBookmark from "@/assets/icons/icon-bookmark-empty.svg";
+import FulllBookmark from "@/assets/icons/icon-bookmark-full.svg";
 
 function TrendCard({ trend }) {
   return (
@@ -12,6 +14,9 @@ function TrendCard({ trend }) {
         fill
         className="rounded-lg"
       />
+      <div className="absolute right-4 top-4 w-8 h-8 rounded-full bg-[#10141e80] inline-flex items-center justify-center">
+        {trend.isBookmarked ? <FulllBookmark /> : <EmptyBookmark />}
+      </div>
 
       <div className="absolute bg-transparent left-4 bottom-4">
         <div className="flex gap-6">
