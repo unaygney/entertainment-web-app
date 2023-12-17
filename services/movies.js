@@ -23,7 +23,7 @@ export const getPost = async (id) => {
 
     console.log(updatedMovies);
     const response = await fetch(API_URL, {
-      method: "POST",
+      method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
