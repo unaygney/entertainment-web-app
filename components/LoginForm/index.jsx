@@ -35,7 +35,10 @@ function LoginForm() {
   };
 
   return (
-    <form className="w-full flex flex-col gap-4 " onSubmit={handleSubmit}>
+    <form
+      className="w-full flex flex-col gap-4 bg-transparent "
+      onSubmit={handleSubmit}
+    >
       <Input
         type="email"
         placeholder="Email address"
