@@ -53,7 +53,7 @@ function Navbar({ activePage }) {
     {
       id: 3,
       name: "bookmark",
-      path: "/bookmark",
+      path: "/dashboard/bookmark",
       icon: (
         <svg width="17" height="20" xmlns="http://www.w3.org/2000/svg">
           <path
