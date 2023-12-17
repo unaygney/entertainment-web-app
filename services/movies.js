@@ -1,4 +1,4 @@
-const API_URL = "https://6550e6577d203ab6626e4f34.mockapi.io/api/v1/movies";
+const API_URL = "https://657ee6fa9d10ccb465d57adf.mockapi.io/movies";
 
 export const getMovies = async () => {
   try {
