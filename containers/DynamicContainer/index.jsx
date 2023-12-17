@@ -5,7 +5,7 @@ import Input from "@/components/Input";
 import SearchIcon from "@/assets/icons/icon-search.svg";
 import Card from "@/components/Card";
 
-function DynamicContainer({ movies }) {
+function DynamicContainer({ movies, title }) {
   const [search, setSearch] = useState("");
 
   const filteredMovies = movies.filter(
@@ -16,7 +16,7 @@ function DynamicContainer({ movies }) {
   );
 
   return (
-    <div className="w-full min-h-screen  bg-[#10141E]    ">
+    <div className="w-full min-h-screen  bg-[#10141E] pb-10    ">
       <div className="flex flex-col lg:flex-row md:p-6 lg:p-8 ">
         <Navbar />
         {search ? (
@@ -55,7 +55,7 @@ function DynamicContainer({ movies }) {
               />
             </div>
             <h3 className="text-xl font-light text-white tracking-[-0.312px] leading-normal md:text-[32px] md:tracking-[-0.5px]">
-              deneme
+              {title}
             </h3>
             <div className="flex flex-wrap gap-4 ">
               {filteredMovies.map((movie, i) => (
