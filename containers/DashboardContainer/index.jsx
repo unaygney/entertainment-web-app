@@ -19,7 +19,7 @@ function DashboardContainer({ trends, movies }) {
   return (
     <div className="w-full min-h-screen  bg-[#10141E]    ">
       <div className="flex flex-col lg:flex-row md:p-6 lg:p-8 ">
-        <Navbar />
+        <Navbar activePage={"dashboard"} />
         {search ? (
           <main className="overflow-hidden w-full h-full px-6">
             <div className="flex items-center px-4 mt-6">

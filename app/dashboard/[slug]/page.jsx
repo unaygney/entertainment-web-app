@@ -22,7 +22,7 @@ async function Page({ params }) {
     notFound();
   }
 
-  return <DynamicContainer movies={filteredData} title={title} />;
+  return <DynamicContainer movies={filteredData} title={title} slug={slug} />;
 }
 
 export default Page;
